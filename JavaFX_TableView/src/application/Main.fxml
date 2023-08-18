@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <Label alignment="CENTER" layoutX="155.0" layoutY="56.0" prefHeight="14.0" prefWidth="82.0" />
+      <Label layoutX="269.0" layoutY="21.0" text="게시판">
+         <font>
+            <Font size="82.0" />
+         </font>
+      </Label>
+      <TableView fx:id="boardTableView" layoutX="22.0" layoutY="146.0" prefHeight="399.0" prefWidth="740.0">
+        <columns>
+          <TableColumn fx:id="colBoardNo" minWidth="60.0" prefWidth="60.0" styleClass="tableCol" text="글 번호" />
+          <TableColumn id="tableColTitle" fx:id="colTitle" minWidth="60.0" prefWidth="320.0" styleClass="tableCol" text="제목" />
+            <TableColumn fx:id="colWriter" minWidth="60.0" prefWidth="120.0" styleClass="tableCol" text="작성자" />
+            <TableColumn fx:id="colRegDate" minWidth="60.0" prefWidth="120.0" styleClass="tableCol" text="등록일자" />
+            <TableColumn fx:id="colUpdDate" minWidth="60.0" prefWidth="120.0" styleClass="tableCol" text="수정일자" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
