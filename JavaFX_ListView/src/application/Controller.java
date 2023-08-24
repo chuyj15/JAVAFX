@@ -33,6 +33,9 @@ public class Controller implements Initializable {
 	Scene scene;
 	
 	@Override
+	//initialize: Initializable 인터페이스를 구현한 initialize 메서드입니다. 
+	//이 메서드는 FXML 파일이 로드된 후 자동으로 호출되며, 초기화 작업을 수행합니다. 
+	//여기서는 리스트뷰에 아이템을 추가하고, 마우스 클릭 및 리스트뷰 아이템 선택 이벤트를 설정하는 등의 작업을 수행합니다.
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		//데이터를 리스트뷰에 추가
 		listView.getItems().addAll(menuList);
@@ -41,15 +44,19 @@ public class Controller implements Initializable {
 		//궁금한 거: 왜 이니셜라이즈 메소드에 이 이벤트를 추가한거지??
 		
 		//마우스클릭 이벤트
+		// 더블 클릭 시 선택한 메뉴의 정보를 라벨에 표시하고, 
+		//선택한 메뉴의 인덱스를 가져와 다른 화면으로 전달하는 동작을 수행합니다.
+		//익명내부클래스
 		listView.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				//더블 클릭 이벤트
+				//더블 클릭 이벤트 -->아이템라벨에 표시해주고, 인덱스넘기고, 화면넘기기까지 함. 
 				if (event.getClickCount()==2) {
 					System.out.println("더블 클릭!!");
 					// getSelectionModel(): 선택 모델은 현재 선택된 아이템을 추적하고 관리하는 객체
-					selectedItem = listView.getSelectionModel().getSelectedItem();
-					itemLabel.setText(selectedItem);
+					//사실 밑에 두개는 필요없을 거  같음. 더블클릭했을 때만 하는 거니까. 
+//					selectedItem = listView.getSelectionModel().getSelectedItem();
+//					itemLabel.setText(selectedItem);
 					System.out.println("선택한 아이템: "+ selectedItem);
 					
 					stage = (Stage) ( (Node)  event.getSource() ).getScene().getWindow();
@@ -90,6 +97,7 @@ public class Controller implements Initializable {
 		//ChangeListener 가 인터페이스기 때문에 changed라는 메소드를 구현해줘야 함. 
 		listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 			//익명구현객체를 생성한거임
+			//changed 메서드는 아이템 선택이 변경되었을 때 호출되는 메서드
 			@Override
 			public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
 				//현재 선택한 아이템을 itemLabel에 텍스트로 지정

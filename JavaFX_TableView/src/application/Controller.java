@@ -38,6 +38,9 @@ public class Controller implements Initializable{
 		boardList.add(board2);
 		boardList.add(board3);
 		
+		//ObservableList는 JavaFX에서 제공하는 데이터 구조 중 하나로, 변경 가능한 리스트를 나타냅니다. 
+		//FXCollections.observableArrayList(...) 메서드는 
+		//			주어진 요소들을 포함하는 새로운 ObservableList 인스턴스를 생성합니다
 		ObservableList<Board> list = FXCollections.observableArrayList(
 //			board1, board2, board3
 			boardList
@@ -50,6 +53,8 @@ public class Controller implements Initializable{
 		// * 게터이름 : get을 제외한 게터 메소드의 이름
 		//ex) getBoardNo --> BoardNo
 		//※ module-info.java --> java.base 모듈 추가
+		//PropertyValueFactory : JavaFX에서 제공하는 데이터 바인딩을 위한 유틸리티 클래스
+		//							컬럼과 데이터 객체의 속성을 연결
 		colBoardNo.setCellValueFactory(new PropertyValueFactory<>("BoardNo"));
 		colTitle.setCellValueFactory(new PropertyValueFactory<>("Title"));
 		colWriter.setCellValueFactory(new PropertyValueFactory<>("Writer"));

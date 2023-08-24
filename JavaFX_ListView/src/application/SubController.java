@@ -17,7 +17,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class SubController  implements Initializable{
+public class SubController  implements Initializable {
 	//필드 선언
 	@FXML private TextField textName;
 	@FXML private TextField textPrice;

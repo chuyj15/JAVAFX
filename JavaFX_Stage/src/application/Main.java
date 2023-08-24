@@ -14,6 +14,8 @@ public class Main extends Application {
 	public void start(Stage stage) {
 		try {
 			
+			//그래픽 요소들을 담기 위한 컨테이너인 Group을 생성하는 부분
+			//Group 컨테이너는 레이아웃을 관리하지 않고, 그저 그래픽 요소들을 자유롭게 배치하는 역할을 수행
 			Group root = new Group();	//이거 컨데이너인가??....
 			Scene scene = new Scene(root, Color.BLACK);
 			stage.setTitle("프로그램 제목");

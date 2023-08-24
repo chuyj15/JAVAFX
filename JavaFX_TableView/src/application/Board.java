@@ -11,7 +11,7 @@ public class Board {
 	private SimpleStringProperty regDate;
 	private SimpleStringProperty updDate;
 	
-	//생성자
+	//생성자//
 	public Board() {
 		this("제목없음", "글쓴이없음", "내용없음");
 	}
@@ -22,7 +22,6 @@ public class Board {
 	}
 	public Board(int boardNo, String title, String writer,
 			String content, String regDate, String updDate) {
-		super();
 		this.boardNo = new SimpleIntegerProperty(boardNo);
 		this.title = new SimpleStringProperty(title);
 		this.writer = new SimpleStringProperty(writer);
@@ -31,6 +30,10 @@ public class Board {
 		this.updDate = new SimpleStringProperty(updDate);
 	}
 	//getter, setter
+	
+	//boardNo 필드는 SimpleIntegerProperty로 선언되어 있으므로, 
+	//이 필드의 값을 가져오기 위해서는 get() 메서드를 사용합니다.
+	//겟메서드를 사용하면 int타입으로 걍 반환이 됨.
 	public int getBoardNo() {
 		return boardNo.get();
 	}

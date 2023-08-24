@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XML 파일의 버전과 인코딩을 정의하는 선언 -->
+
+<!-- FXML 파일에서 사용할 JavaFX 패키지 및 클래스를 import -->
+<?import javafx.scene.layout.AnchorPane?>
+
+<!-- 실제 UI 구조를 정의하는 부분 -->
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+</AnchorPane>
+<!--  -->
